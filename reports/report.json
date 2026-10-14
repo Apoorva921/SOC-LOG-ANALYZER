@@ -1,0 +1,511 @@
+{
+  "report_metadata": {
+    "title": "SOC Log Analyzer Report",
+    "generated_at": "2026-10-14 22:26:10",
+    "sources": [
+      "logs/auth.log",
+      "logs/access.log"
+    ]
+  },
+  "investigation_stats": {
+    "total_auth_events": 43,
+    "total_access_events": 311,
+    "total_alerts": 8,
+    "severity_breakdown": {
+      "CRITICAL": 0,
+      "HIGH": 2,
+      "MEDIUM": 5,
+      "LOW": 1
+    },
+    "top_targeted_users": [
+      [
+        "ubuntu",
+        9
+      ],
+      [
+        "test",
+        7
+      ],
+      [
+        "oracle",
+        6
+      ],
+      [
+        "admin",
+        5
+      ],
+      [
+        "hadoop",
+        4
+      ]
+    ],
+    "top_attack_ips": [
+      [
+        "192.168.1.15",
+        2
+      ],
+      [
+        "10.0.0.8",
+        2
+      ],
+      [
+        "203.0.113.44",
+        2
+      ],
+      [
+        "192.168.1.20",
+        1
+      ],
+      [
+        "198.51.100.23",
+        1
+      ]
+    ],
+    "top_requested_paths": [
+      [
+        "/",
+        14
+      ],
+      [
+        "/products",
+        14
+      ],
+      [
+        "/contact",
+        10
+      ],
+      [
+        "/images/logo.png",
+        8
+      ],
+      [
+        "/about",
+        7
+      ]
+    ],
+    "top_404_paths": [
+      [
+        "/admin",
+        7
+      ],
+      [
+        "/.env",
+        6
+      ],
+      [
+        "/xmlrpc.php",
+        5
+      ],
+      [
+        "/phpmyadmin",
+        5
+      ],
+      [
+        "/wp-login.php",
+        4
+      ]
+    ],
+    "status_code_distribution": {
+      "200": 247,
+      "404": 41,
+      "301": 12,
+      "304": 11
+    }
+  },
+  "ip_threat_matrix": [
+    {
+      "ip": "192.168.1.15",
+      "ip_type": "Internal",
+      "risk_score": 72,
+      "threat_level": "HIGH",
+      "auth_failures": 27,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 0,
+      "alert_count": 2,
+      "reasons": [
+        "Severe SSH brute-force (27 failures)",
+        "High finding: SSH Brute Force Detected"
+      ]
+    },
+    {
+      "ip": "10.0.0.8",
+      "ip_type": "Internal",
+      "risk_score": 62,
+      "threat_level": "HIGH",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 41,
+      "total_requests": 41,
+      "alert_count": 2,
+      "reasons": [
+        "Aggressive web scanning (41 404s)",
+        "High finding: Sensitive Path & Vulnerability Probing Detected"
+      ]
+    },
+    {
+      "ip": "203.0.113.44",
+      "ip_type": "External",
+      "risk_score": 56,
+      "threat_level": "HIGH",
+      "auth_failures": 12,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 0,
+      "alert_count": 2,
+      "reasons": [
+        "SSH brute-force (12 failures)",
+        "External (Public) Source IP"
+      ]
+    },
+    {
+      "ip": "192.168.1.20",
+      "ip_type": "Internal",
+      "risk_score": 32,
+      "threat_level": "MEDIUM",
+      "auth_failures": 0,
+      "auth_successes": 1,
+      "web_404s": 0,
+      "total_requests": 0,
+      "alert_count": 1,
+      "reasons": [
+        "Direct root SSH login"
+      ]
+    },
+    {
+      "ip": "198.51.100.23",
+      "ip_type": "External",
+      "risk_score": 14,
+      "threat_level": "LOW",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 210,
+      "alert_count": 1,
+      "reasons": [
+        "External (Public) Source IP"
+      ]
+    },
+    {
+      "ip": "192.168.1.50",
+      "ip_type": "Internal",
+      "risk_score": 5,
+      "threat_level": "BENIGN",
+      "auth_failures": 3,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 0,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.10",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 2,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.11",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 2,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.12",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 1,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.13",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 1,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.14",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 3,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.15",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 1,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.16",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 4,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.17",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 5,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.18",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 9,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.19",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 2,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.2",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 3,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.20",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 1,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.3",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 4,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.4",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 4,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.5",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 4,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.6",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 4,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.7",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 5,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.8",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 2,
+      "alert_count": 0,
+      "reasons": []
+    },
+    {
+      "ip": "172.16.0.9",
+      "ip_type": "Internal",
+      "risk_score": 0,
+      "threat_level": "BENIGN",
+      "auth_failures": 0,
+      "auth_successes": 0,
+      "web_404s": 0,
+      "total_requests": 3,
+      "alert_count": 0,
+      "reasons": []
+    }
+  ],
+  "alerts": [
+    {
+      "severity": "HIGH",
+      "title": "SSH Brute Force Detected",
+      "ip": "192.168.1.15",
+      "ip_type": "Internal",
+      "detail": "Failed Attempts: 27 (Threshold: 10)",
+      "count": 27,
+      "category": "Authentication"
+    },
+    {
+      "severity": "HIGH",
+      "title": "Sensitive Path & Vulnerability Probing Detected",
+      "ip": "10.0.0.8",
+      "ip_type": "Internal",
+      "detail": "Probed 38 sensitive endpoint(s):\n  - Admin / CMS Portal Scan (21x: /wp-login.php, /admin, /xmlrpc.php, ... (+1 more))\n  - Backup / Database Archive Probe (2x: /backup.zip)\n  - Configuration File Probe (3x: /config.php)\n  - Web Shell / Backdoor Probe (4x: /shell.php)\n  - Credential / Repository Exposure Probe (8x: /.env, /.git/config)",
+      "count": 38,
+      "category": "Web Exploitation"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Repeated Failed Login Attempts",
+      "ip": "203.0.113.44",
+      "ip_type": "External",
+      "detail": "Failed Attempts: 6 (Threshold: 5)",
+      "count": 6,
+      "category": "Authentication"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Multiple Invalid Usernames Attempted",
+      "ip": "192.168.1.15",
+      "ip_type": "Internal",
+      "detail": "Distinct Usernames Tried: 6 [admin, guest, oracle, root, test, ... (+1 more)]",
+      "count": 6,
+      "category": "Reconnaissance"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Multiple Invalid Usernames Attempted",
+      "ip": "203.0.113.44",
+      "ip_type": "External",
+      "detail": "Distinct Usernames Tried: 5 [backup, deploy, hadoop, postgres, svc]",
+      "count": 5,
+      "category": "Reconnaissance"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Direct Root SSH Login Accepted (Internal)",
+      "ip": "192.168.1.20",
+      "ip_type": "Internal",
+      "detail": "Successful root logins: 1. Direct root logins pose privilege escalation risks.",
+      "count": 1,
+      "category": "Privilege Access"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Repeated 404 Requests (Web Scanning)",
+      "ip": "10.0.0.8",
+      "ip_type": "Internal",
+      "detail": "404 Not Found Errors: 41 (Threshold: 20)",
+      "count": 41,
+      "category": "Web Reconnaissance"
+    },
+    {
+      "severity": "LOW",
+      "title": "High Request Frequency (Potential DoS / Crawler)",
+      "ip": "198.51.100.23",
+      "ip_type": "External",
+      "detail": "Total HTTP Requests: 210 (Threshold: 200)",
+      "count": 210,
+      "category": "Volume Anomaly"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 5,
+    "low": 1,
+    "total": 8
+  }
+}

@@ -1,0 +1,9 @@
+Severity,Category,Title,IP,IP_Type,Detail,Count
+HIGH,Authentication,SSH Brute Force Detected,192.168.1.15,Internal,Failed Attempts: 27 (Threshold: 10),27
+HIGH,Web Exploitation,Sensitive Path & Vulnerability Probing Detected,10.0.0.8,Internal,"Probed 38 sensitive endpoint(s):   - Admin / CMS Portal Scan (21x: /wp-login.php, /admin, /xmlrpc.php, ... (+1 more))   - Backup / Database Archive Probe (2x: /backup.zip)   - Configuration File Probe (3x: /config.php)   - Web Shell / Backdoor Probe (4x: /shell.php)   - Credential / Repository Exposure Probe (8x: /.env, /.git/config)",38
+MEDIUM,Authentication,Repeated Failed Login Attempts,203.0.113.44,External,Failed Attempts: 6 (Threshold: 5),6
+MEDIUM,Reconnaissance,Multiple Invalid Usernames Attempted,192.168.1.15,Internal,"Distinct Usernames Tried: 6 [admin, guest, oracle, root, test, ... (+1 more)]",6
+MEDIUM,Reconnaissance,Multiple Invalid Usernames Attempted,203.0.113.44,External,"Distinct Usernames Tried: 5 [backup, deploy, hadoop, postgres, svc]",5
+MEDIUM,Privilege Access,Direct Root SSH Login Accepted (Internal),192.168.1.20,Internal,Successful root logins: 1. Direct root logins pose privilege escalation risks.,1
+MEDIUM,Web Reconnaissance,Repeated 404 Requests (Web Scanning),10.0.0.8,Internal,404 Not Found Errors: 41 (Threshold: 20),41
+LOW,Volume Anomaly,High Request Frequency (Potential DoS / Crawler),198.51.100.23,External,Total HTTP Requests: 210 (Threshold: 200),210

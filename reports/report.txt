@@ -1,0 +1,37 @@
+============================================================
+                   SOC LOG ANALYZER REPORT
+============================================================
+
+Generated : 2026-10-14 22:26:42
+Sources   : logs/nginx.log
+
+IP THREAT MATRIX (RISK SCORING)
+------------------------------------------------------------
+IP Address         Type       Score    Level      Indicators / Activity
+------------------------------------------------------------
+10.0.0.8           Internal   25       MEDIUM     High finding: Sensitive Path & Vulnerability Probing Detected
+
+SECURITY INCIDENTS & DETECTIONS
+------------------------------------------------------------
+
+[HIGH] Sensitive Path & Vulnerability Probing Detected [Web Exploitation]
+IP Address: 10.0.0.8 (Internal)
+Details: Probed 13 sensitive endpoint(s):
+  - Admin / CMS Portal Scan (6x: /wp-login.php, /admin, /xmlrpc.php, ... (+1 more))
+  - Backup / Database Archive Probe (1x: /backup.zip)
+  - Configuration File Probe (1x: /config.php)
+  - Web Shell / Backdoor Probe (2x: /shell.php)
+  - Credential / Repository Exposure Probe (3x: /.env, /.git/config)
+------------------------------------------------------------
+
+Top 404 / Probed Endpoints:
+/admin (2x), /shell.php (2x), /xmlrpc.php (2x), /.env (2x), /wp-login.php (1x)
+
+INVESTIGATION SUMMARY
+------------------------------------------------------------
+Critical Alerts : 0
+High Alerts     : 1
+Medium Alerts   : 0
+Low Alerts      : 0
+Total Alerts    : 1
+------------------------------------------------------------
